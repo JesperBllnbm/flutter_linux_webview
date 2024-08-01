@@ -174,9 +174,9 @@ else()
   else()
     # linux x86_64
     set(WEBVIEW_CEF_DISTRIB_NAME
-      "cef_binary_96.0.18+gfe551e4+chromium-96.0.4664.110_linux64_minimal")
+      "cef_binary_127.1.2+g1cd2424+chromium-127.0.6533.73_linux64_minimal")
     set(WEBVIEW_CEF_DISTRIB_URL
-      "https://cef-builds.spotifycdn.com/cef_binary_96.0.18%2Bgfe551e4%2Bchromium-96.0.4664.110_linux64_minimal.tar.bz2")
+      "https://cef-builds.spotifycdn.com/cef_binary_127.1.2%2Bg1cd2424%2Bchromium-127.0.6533.73_linux64_minimal.tar.bz2")
     set(WEBVIEW_CEF_DISTRIB_HASH_SHA1 "2f944adae71dd1a6c4d795373166a09f543c7cbd")
     set(WEBVIEW_CEF_BUILD_TYPE "Release")
   endif()

@@ -1,4 +1,4 @@
-# flutter\_linux\_webview
+# flutter_linux_webview
 
 A Linux Desktop implementation for the [webview_flutter](https://pub.dev/packages/webview_flutter/versions/3.0.4) (v3.0.4) plugin, powered by CEF (Chromium Embedded Framework).
 
@@ -7,7 +7,8 @@ A Linux Desktop implementation for the [webview_flutter](https://pub.dev/package
 This plugin package provides the Linux implementation for [webview_flutter](https://pub.dev/packages/webview_flutter/versions/3.0.4) (v3.0.4) using CEF.
 
 Depending on the architecture, the following CEF binary distribution provided at https://cef-builds.spotifycdn.com/index.html is downloaded in the source directory of the plugin at the first build time:
-- for x86_64: [cef_binary_96.0.18+gfe551e4+chromium-96.0.4664.110_linux64_minimal](https://cef-builds.spotifycdn.com/cef_binary_96.0.18%2Bgfe551e4%2Bchromium-96.0.4664.110_linux64_minimal.tar.bz2)
+
+- for x86_64: [cef_binary_127.1.2+g1cd2424+chromium-127.0.6533.73_linux64_minimal](https://cef-builds.spotifycdn.com/cef_binary_127.1.2%2Bg1cd2424%2Bchromium-127.0.6533.73_linux64_minimal.tar.bz2)
 - for arm64: [cef_binary_96.0.18+gfe551e4+chromium-96.0.4664.110_linuxarm64_minimal](https://cef-builds.spotifycdn.com/cef_binary_96.0.18%2Bgfe551e4%2Bchromium-96.0.4664.110_linuxarm64_minimal.tar.bz2)
 
 <!-- note: pub.dev and GitBucket does not resolve relative paths!! GitHub does. -->
@@ -18,7 +19,6 @@ Depending on the architecture, the following CEF binary distribution provided at
   </tr>
 </table>
 
-
 # Supported Platforms
 
 We have confirmed that this plugin works on some platforms but hangs or crashes on others.
@@ -26,11 +26,11 @@ We have confirmed that this plugin works on some platforms but hangs or crashes 
 See [validation_report.md](./validation_report.md) for details on how the plugin was validated on different platforms.
 
 As the report results show, there are stability issues:
-* WebView creation appears to be somewhat unstable.
-* Using Flutter 3.16.3 (latest as of 2023-12-13), the plugin test hangs on all platforms.
+
+- WebView creation appears to be somewhat unstable.
+- Using Flutter 3.16.3 (latest as of 2023-12-13), the plugin test hangs on all platforms.
 
 We should fix these issues.
-
 
 # Run the example project
 
@@ -220,7 +220,6 @@ On Linux, same as Android, this setting is ignored.
 See [WebView.allowsInlineMediaPlayback](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/allowsInlineMediaPlayback.html)
 and [WebSettings.allowsInlineMediaPlayback] for the original description.
 
-
 ### `Color?` [backgroundColor](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/backgroundColor.html)
 
 See [WebView.backgroundColor](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/backgroundColor.html)
@@ -234,10 +233,9 @@ component is fully opaque then the RGB components will be used as the
 background color. If the alpha component is fully transparent then
 transparent painting will be enabled.
 
-
 ### `bool?` [debuggingEnabled](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/debuggingEnabled.html)
 
-This property is not supported due to CEF incompatibility* and is ignored on Linux.
+This property is not supported due to CEF incompatibility\* and is ignored on Linux.
 
 Alternatively, `--remote-debugging-port` command line argument can be set
 at CEF startup using [LinuxWebViewPlugin.initialize].
@@ -251,7 +249,6 @@ In Android `webview_flutter`, `debuggingEnabled` can be dynamically
 toggled enabled/disabled. However, in CEF, `--remote-debugging-port`
 cannot be changed later once CEF has started.
 
-
 ### `bool?` [gestureNavigationEnabled](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/gestureNavigationEnabled.html)
 
 This only works on iOS.
@@ -260,7 +257,6 @@ On Linux, same as Android, this setting is ignored.
 
 See [WebView.gestureNavigationEnabled](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/gestureNavigationEnabled.html)
 and [WebSettings.gestureNavigationEnabled] for the original description.
-
 
 ### `Set<Factory<OneSequenceGestureRecognizer>>?` [gestureRecognizers](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/gestureRecognizers.html)
 
@@ -272,16 +268,14 @@ for the original description.
 Note: This is not a WebView feature, but a PlatformViews feature. Also
 note that this plugin does not currently support touch devices.
 
-
 ### `List<WebViewCookie>` [initialCookies](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/initialCookies.html)
 
 See [WebView.initialCookies](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/initialCookies.html)
 and [CreationParams.cookies].
 
-
 ### `AutoMediaPlaybackPolicy` [initialMediaPlaybackPolicy](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/initialMediaPlaybackPolicy.html)
 
-This property is not supported due to CEF incompatibility* and is ignored on Linux.
+This property is not supported due to CEF incompatibility\* and is ignored on Linux.
 
 Alternatively, `--autoplay-policy=no-user-gesture-required` command line
 argument can be set at CEF startup using [LinuxWebViewPlugin.initialize].
@@ -296,14 +290,12 @@ each WebView at its creation. However, in CEF,
 `--autoplay-policy=no-user-gesture-required` applies to all browsers once
 CEF has started and cannot be changed later.
 
-
 ### `String?` [initialUrl](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/initialUrl.html)
 
 See [WebView.initialUrl](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/initialUrl.html)
 or [CreationParams.initialUrl].
 
 On Linux, when it is null the webview will be created with loading "about:blank".
-
 
 ### `Set<JavascriptChannel>?` [javascriptChannels](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/javascriptChannels.html)
 
@@ -313,7 +305,6 @@ TODO(Ino): implement `javascriptChannels`.
 
 See [WebView.javascriptChannels](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/javascriptChannels.html)
 and [CreationParams.javascriptChannelNames] for the original description.
-
 
 ### `JavascriptMode?` [javascriptMode](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/javascriptMode.html)
 
@@ -329,7 +320,6 @@ In Android `webview_flutter`, `javscriptMode` can be changed dynamically.
 However, in CEF, once a browser is created, it is not possible to change
 whether javascript is enabled or disabled unless the browser is recreated.
 
-
 ### `bool?` [navigationDelegate](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/navigationDelegate.html)
 
 This property has not yet been implemented and is ignored on Linux.
@@ -339,21 +329,17 @@ TODO(Ino): implement `navigationDelegate`.
 See [WebView.navigationDelegate](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/navigationDelegate.html)
 and [WebSettings.hasNavigationDelegate] for the original description.
 
-
 ### `PageFinishedCallback?` [onPageFinished](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onPageFinished.html)
 
 See [WebView.onPageFinished](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onPageFinished.html).
-
 
 ### `PageStartedCallback?` [onPageStarted](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onPageStarted.html)
 
 See [WebView.onPageStarted](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onPageStarted.html).
 
-
 ### `bool?` [onProgress](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onProgress.html)
 
 See [WebView.onProgress](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onProgress.html).
-
 
 ### `WebResourceErrorCallback?` [onWebResourceError](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onWebResourceError.html)
 
@@ -364,17 +350,15 @@ On Linux, currently only `errorCode` and `description` are supported.
 
 TODO(Ino): improve `onWebResourceError` support.
 
-
 ### `WebViewCreatedCallback?` [onWebViewCreated](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onWebViewCreated.html)
 
 This is the only interface to get WebViewController.
 
 See [WebView.onWebViewCreated](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/onWebViewCreated.html)
 
-
 ### `String?` [userAgent](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/userAgent.html)
 
-This property is not supported due to CEF incompatibility* and is ignored on Linux.
+This property is not supported due to CEF incompatibility\* and is ignored on Linux.
 
 Alternatively, `--user-agent="UA string"` command line argument can be set
 at CEF startup using [LinuxWebViewPlugin.initialize].
@@ -388,10 +372,9 @@ In Android `webview_flutter`, `userAgent` can be set for each WebView and
 can be changed dynamically. However, in CEF, `--user-agent` applies to all
 browsers once CEF has started and cannot be changed later.
 
-
 ### `bool?` [zoomEnabled](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebView/zoomEnabled.html)
 
-This property is not supported due to CEF incompatibility* and is ignored on Linux.
+This property is not supported due to CEF incompatibility\* and is ignored on Linux.
 
 Alternatively, `--disable-pinch` command line argument can be set at CEF
 startup using [LinuxWebViewPlugin.initialize].
@@ -407,21 +390,20 @@ to all browsers once CEF has started and cannot be changed later.
 
 Note: This plugin does not currently support touch devices.
 
-
 ## Specification of methods of [WebViewController](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController-class.html) on Linux
 
 The following methods are the same for Android/iOS.
 
-* `Future<bool>` canGoBack()
-* `Future<void>` goBack()
-* `Future<bool>` canGoForward()
-* `Future<void>` goForward()
-* `Future<String?>` currentUrl()
-* `Future<String?>` getTitle()
-* `Future<void>` reload()
-* `Future<String>` runJavascriptReturningResult(String javaScriptString)
-* `Future<void>` runJavascript(String javaScriptString)
-* `Future<String>` evaluateJavascript(String javascriptString)
+- `Future<bool>` canGoBack()
+- `Future<void>` goBack()
+- `Future<bool>` canGoForward()
+- `Future<void>` goForward()
+- `Future<String?>` currentUrl()
+- `Future<String?>` getTitle()
+- `Future<void>` reload()
+- `Future<String>` runJavascriptReturningResult(String javaScriptString)
+- `Future<void>` runJavascript(String javaScriptString)
+- `Future<String>` evaluateJavascript(String javascriptString)
 
 Some methods are not implemented or behave differently from Android/iOS:
 
@@ -438,7 +420,6 @@ You must first navigate to the request origin (scheme + domain) using some other
 
 The timing of when Future is resolved is different from that expected on Android/iOS (see the integration test). When `loadUrl` is resolved, the new URL is expected to be available in `currentUrl`, but the current implementation does not do so.
 
-
 ### `Future<void>` [loadRequest(WebViewRequest request)](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/loadRequest.html)
 
 See [WebViewLinuxPlatformController.loadRequest] for details.
@@ -453,7 +434,6 @@ You must first navigate to the request origin (scheme + domain) using some other
 The timing of when Future is resolved is different from Android/iOS.
 Immediately after this method is resolved, the new URL cannot yet be obtained with [currentUrl].
 
-
 ### `Future<void>` [loadHtmlString(String html, {String? baseUrl})](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/loadHtmlString.html)
 
 See [WebViewLinuxPlatformController.loadHtmlString] for details.
@@ -467,7 +447,6 @@ See [WebViewLinuxPlatformController.loadHtmlString] for details.
 The timing of when Future is resolved is different from Android/iOS.
 Immediately after this method is resolved, the new URL cannot yet be obtained with [currentUrl].
 
-
 ### `Future<void>` [loadFile(String absoluteFilePath)](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/loadFile.html)
 
 See [WebViewLinuxPlatformController.loadFile] for details.
@@ -476,7 +455,6 @@ See [WebViewLinuxPlatformController.loadFile] for details.
 
 The timing of when Future is resolved is different from Android/iOS.
 Immediately after this method is resolved, the new URL cannot yet be obtained with [currentUrl].
-
 
 ### `Future<void>` [loadFlutterAsset(String key)](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/loadFlutterAsset.html)
 
@@ -487,51 +465,43 @@ See [WebViewLinuxPlatformController.loadFlutterAsset] for details.
 The timing of when Future is resolved is different from Android/iOS.
 Immediately after this method is resolved, the new URL cannot yet be obtained with [currentUrl].
 
-
 ### `Future<void>` [clearCache()](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/clearCache.html)
 
 Not supported because the underlying browser does not support it.
-
 
 ### `Future<int>` [getScrollX()](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/getScrollX.html)
 
 Not implemented on Linux. Will be supported in the future.
 
-
 ### `Future<int>` [getScrollY()](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/getScrollY.html)
 
 Not implemented on Linux. Will be supported in the future.
-
 
 ### `Future<void>` [scrollBy(int x, int y)](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/scrollBy.html)
 
 Not implemented on Linux. Will be supported in the future.
 
-
 ### `Future<void>` [scrollTo(int x, int y)](https://pub.dev/documentation/webview_flutter/3.0.4/webview_flutter/WebViewController/scrollTo.html)
 
 Not implemented on Linux. Will be supported in the future.
 
-
 ## TODO
 
-* [ ] **Upgrade to webview_flutter v4 interface**
-    * [ ] and add tests
-* [ ] Investigate and fix the WebView creation stability issues.
-* [ ] Implement `javascriptChannels`
-* [ ] Implement `navigationDelegate`
-* [ ] Implement `javascriptMode`
-* [ ] Improve `onWebResourceError` support
-* [ ] Implement `getScrollX`, `getScrollY`, `scrollBy`, `scrollTo()`
-* [ ] Update the underlying browser version (currently CEF/Chromium 96.0.4664.110)
-
+- [ ] **Upgrade to webview_flutter v4 interface**
+  - [ ] and add tests
+- [ ] Investigate and fix the WebView creation stability issues.
+- [ ] Implement `javascriptChannels`
+- [ ] Implement `navigationDelegate`
+- [ ] Implement `javascriptMode`
+- [ ] Improve `onWebResourceError` support
+- [ ] Implement `getScrollX`, `getScrollY`, `scrollBy`, `scrollTo()`
+- [ ] Update the underlying browser version (currently CEF/Chromium 96.0.4664.110)
 
 ## Contributing
 
 Thank you for your interest in contributing.
 
 However, currently, we are not accepting contributions, and we are unable to respond to pull requests.
-
 
 ## License
 
